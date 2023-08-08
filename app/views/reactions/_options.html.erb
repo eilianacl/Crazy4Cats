@@ -1,0 +1,8 @@
+<div class="container mt-4">
+    <div class="btn-group" role="group" aria-label="Reactions">
+      <% Reaction.kinds.each do |kind| %>
+        <%= button_to "#{kind}", user_reaction_path(publication_id: @publication.id, kind: kind), method: :post, class: "btn btn-primary mb-2 mr-2" %>
+      <% end %>
+    </div>
+  </div>
+  

@@ -1,0 +1,15 @@
+<div class="container mt-4">
+    <h1>Publicaciones</h1>
+    <ul class="list-group">
+      <% @publications.each do |publication| %>
+        <li class="list-group-item">
+          <%= publication.title %> -
+          <%= publication.find_kind_user_relation(current_user) %>
+          <p>
+            <%= link_to "Show this publication", publication, class: "btn btn-link" %>
+          </p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  

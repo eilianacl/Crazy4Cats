@@ -1,0 +1,32 @@
+<%= form_with(model: publication, class: "mt-4") do |form| %>
+  <% if publication.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+
+      <ul>
+        <% publication.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :image, class: "form-label" %>
+    <%= form.text_field :image, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit "Save changes", class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Nueva publicación</h1>
+
+  <%= render "form", publication: @publication %>
+
+  <div class="mt-4">
+    <%= link_to "Back to publications", publications_path, class: "btn btn-secondary" %>
+  </div>
+</div>

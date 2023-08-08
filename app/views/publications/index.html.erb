@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+<div class="container mt-5">
+  <h1 class="mb-4">Publicaciones</h1>
+
+  <div class="row" id="publications">
+    <% @publications.each do |publication| %>
+      <div class="col-md-6 mb-4">
+        <%= render publication %>
+        <p class="mt-2">
+          <%= link_to "Ver esta publicación", publication, class: "btn btn-secondary" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Nueva publicación", new_publication_path, class: "btn btn-primary" %>
+</div>
